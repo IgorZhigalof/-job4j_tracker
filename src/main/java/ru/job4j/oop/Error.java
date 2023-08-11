@@ -21,9 +21,9 @@ public class Error {
 
     public static void main(String[] args) {
         Error test = new Error();
+        Error cusByHot = new Error(false, 454, "System doesn't like hot");
         Error cusByWater = new Error(true, 422, "System doesn't like water");
         Error cusByCold = new Error(true, 453, "System doesn't like cold");
-        Error cusByHot = new Error(false, 454, "System doesn't like hot");
             test.printInfo();
             cusByHot.printInfo();
             cusByWater.printInfo();
