@@ -2,6 +2,7 @@ package ru.job4j.oop;
 
 public class Story {
 
+
     private static void ballsStory() {
         Ball ball = new Ball();
         Wolf wolf = new Wolf();
