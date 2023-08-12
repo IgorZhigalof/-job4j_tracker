@@ -1,5 +1,9 @@
 package ru.job4j.max;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Reduce {
     private int[] array;
 
@@ -12,6 +16,7 @@ public class Reduce {
             System.out.println(array[index]);
         }
     }
+
 
     public static void main(String[] args) {
         int[] array = {1, 2, 3};
