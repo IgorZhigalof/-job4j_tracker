@@ -6,7 +6,5 @@ public class JSONReport extends TextReport {
         return "{" + System.lineSeparator() + "\t\"name\" : \"" + name + "\","
                 + System.lineSeparator() + "\t\"body\" : \"" + body + "\""
                 + System.lineSeparator() + "}";
-
-
     }
 }
