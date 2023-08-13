@@ -21,7 +21,7 @@ public class Item {
         this.id = id;
     }
 
-    public String getTime() {
+    public String getCreated() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String currentDateTimeFormat = created.format(formatter);
         return currentDateTimeFormat;
