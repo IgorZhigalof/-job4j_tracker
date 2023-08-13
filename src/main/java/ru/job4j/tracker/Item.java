@@ -22,7 +22,7 @@ public class Item {
     }
 
     public String getCreated() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss ");
         String currentDateTimeFormat = created.format(formatter);
         return currentDateTimeFormat;
     }
