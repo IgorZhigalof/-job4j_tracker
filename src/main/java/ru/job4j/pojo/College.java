@@ -8,9 +8,11 @@ public class College {
         student.setName("Andrew");
         student.setSurname("Korobka");
         student.setPatronymic("Dmitrievich");
-        System.out.println(student.getName() + "\n" + student.getSurname() + "\n"
-                           + student.getPatronymic() + "\n" + student.getGroup() + "\n"
-                            + student.getDateOfAdmission());
+        System.out.println(student.getName()
+                            + System.lineSeparator() + student.getSurname()
+                            + System.lineSeparator() + student.getPatronymic()
+                            + System.lineSeparator() + student.getGroup()
+                            + System.lineSeparator() + student.getDateOfAdmission());
 
     }
 }
