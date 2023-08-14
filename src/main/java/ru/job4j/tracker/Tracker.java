@@ -38,12 +38,13 @@ public class Tracker {
         if (id >= 0 && id <= size) {
             currentIndex = indexOf(id);
         }
-        if (currentIndex != -1) {
+        boolean isDeletable = currentIndex != -1;
+        if (isDeletable) {
             System.arraycopy(items, currentIndex + 1, items, currentIndex, size - currentIndex - 1);
             items[size - 1] = null;
             size--;
         }
-        return currentIndex != -1;
+        return isDeletable;
     }
 
     public boolean replace(int id, Item item) {
@@ -51,11 +52,12 @@ public class Tracker {
         if (id >= 0 && id <= size) {
             currentIndex = indexOf(id);
         }
-        if (currentIndex != -1) {
+        boolean isReplaceable = currentIndex != -1;
+        if (isReplaceable) {
             item.setId(id);
             items[currentIndex] = item;
         }
-        return currentIndex != -1;
+        return isReplaceable;
     }
 
     public Item[] findByName(String name) {
