@@ -19,7 +19,7 @@ public class Library {
                     + "   Count of pages: " + books[i].getCountOfPages());
         }
         for (int i = 0; i < books.length; i++) {
-            if (books[i].getTitle().equals("Clean code")) {
+            if ("Clean code".equals(books[i].getTitle())) {
                 System.out.println("Title: " + books[i].getTitle()
                         + "   Count of pages: " + books[i].getCountOfPages());
             }
