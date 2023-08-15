@@ -34,10 +34,7 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-        int currentIndex = -1;
-        if (id >= 0 && id <= size) {
-            currentIndex = indexOf(id);
-        }
+        int currentIndex = indexOf(id);
         boolean isDeletable = currentIndex != -1;
         if (isDeletable) {
             System.arraycopy(items, currentIndex + 1, items, currentIndex, size - currentIndex - 1);
