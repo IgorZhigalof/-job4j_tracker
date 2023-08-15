@@ -3,6 +3,7 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Matches {
+    @SuppressWarnings("checkstyle:EmptyBlock")
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Игра 11.");
@@ -12,13 +13,14 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            turn = !turn;
-            switch (matches) {
-                case 1, 2, 3 -> {
-                    count -= matches;
-                    System.out.println("Ход выполнен! Оставшееся количество спичек: " + Math.max(count, 0));
-                }
-                default -> System.out.println("Введено недопустимое значние");
+            if (matches == 1 || matches == 2 || matches == 3 && count - matches > 0) {
+                count -= matches;
+                turn = !turn;
+                System.out.println("Ход выполнен! Оставшееся количество спичек: " + Math.max(count, 0));
+            } else if (!(matches == 1 || matches == 2 || matches == 3)) {
+                System.out.println("Введено недопустимое значние");
+            } else {
+                System.out.println("Вы не можете взять спичек больше оставшегося количества");
             }
         }
         if (!turn) {
