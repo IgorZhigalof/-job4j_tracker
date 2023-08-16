@@ -45,10 +45,11 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        boolean isReplaceable = (id != -1) && (id < size);
+        int currentIndex = indexOf(id);
+        boolean isReplaceable = currentIndex != -1;
         if (isReplaceable) {
             item.setId(id);
-            items[id] = item;
+            items[currentIndex] = item;
         }
         return isReplaceable;
     }
