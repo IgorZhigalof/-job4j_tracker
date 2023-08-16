@@ -19,9 +19,25 @@ public class StartUI {
                 deleteItem(scanner, tracker);
             } else if (select == 4) {
                 findById(scanner, tracker);
+            } else if (select == 5) {
+                findByName(scanner, tracker);
             } else if (select == 6) {
                 run = false;
             }
+        }
+    }
+
+    private static void findByName(Scanner scanner, Tracker tracker) {
+        System.out.println("=== Find items by name ===");
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        Item[] items = tracker.findByName(name);
+        if (items.length > 0) {
+            for (Item item : items) {
+                System.out.println(item);
+            }
+        } else {
+            System.out.println("Заявки с именем: " + name + " не найдены.");
         }
     }
 
