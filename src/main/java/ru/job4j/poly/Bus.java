@@ -3,7 +3,7 @@ package ru.job4j.poly;
 public class Bus implements ru.job4j.poly.Transport {
     @Override
     public void move() {
-        System.out.println("Moving forward");
+        System.out.println("Moving forward ");
     }
 
     @Override
