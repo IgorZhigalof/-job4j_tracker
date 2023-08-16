@@ -13,11 +13,11 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            if (matches == 1 || matches == 2 || matches == 3 && count - matches > 0) {
+            if (matches >= 1 && matches <= Math.min(3, count)) {
                 count -= matches;
                 turn = !turn;
                 System.out.println("Ход выполнен! Оставшееся количество спичек: " + Math.max(count, 0));
-            } else if (!(matches == 1 || matches == 2 || matches == 3)) {
+            } else if (matches > Math.min(3, count) || matches < 1) {
                 System.out.println("Введено недопустимое значние");
             } else {
                 System.out.println("Вы не можете взять спичек больше оставшегося количества");
