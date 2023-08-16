@@ -8,6 +8,6 @@ public class Train implements Vehicle {
 
     @Override
     public void sound() {
-        System.out.println("Тудух-тудух");
+        System.out.println("Тудух-тудух ");
     }
 }

@@ -8,6 +8,6 @@ public class Airplane implements Vehicle {
 
     @Override
     public void sound() {
-        System.out.println("Вжууууууууххх");
+        System.out.println("Вжууууууууххх ");
     }
 }

@@ -8,6 +8,6 @@ public class Bus implements Vehicle {
 
     @Override
     public void sound() {
-        System.out.println("Бжжжжжж");
+        System.out.println("Бжжжжжж ");
     }
 }
