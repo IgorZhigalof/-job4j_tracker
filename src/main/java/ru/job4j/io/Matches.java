@@ -3,7 +3,6 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Matches {
-    @SuppressWarnings("checkstyle:EmptyBlock")
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Игра 11.");
@@ -17,10 +16,10 @@ public class Matches {
                 count -= matches;
                 turn = !turn;
                 System.out.println("Ход выполнен! Оставшееся количество спичек: " + Math.max(count, 0));
-            } else if (matches > Math.min(3, count) || matches < 1) {
-                System.out.println("Введено недопустимое значние");
-            } else {
+            } else if (matches > count) {
                 System.out.println("Вы не можете взять спичек больше оставшегося количества");
+            } else {
+                System.out.println("Вы не можете взять меньше 1 спички");
             }
         }
         if (!turn) {
