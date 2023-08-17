@@ -1,6 +1,6 @@
 package ru.job4j.poly;
 
-public class Bus implements ru.job4j.poly.Transport {
+public class Bus implements Transport {
     @Override
     public void move() {
         System.out.println("Moving forward ");
