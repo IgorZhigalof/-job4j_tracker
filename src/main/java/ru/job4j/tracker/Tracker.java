@@ -13,6 +13,11 @@ public class Tracker {
         return item;
     }
 
+    public Item findById(int id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
@@ -26,11 +31,6 @@ public class Tracker {
             }
         }
         return rsl;
-    }
-
-    public Item findById(int id) {
-        int index = indexOf(id);
-        return index != -1 ? items[index] : null;
     }
 
     public boolean delete(int id) {
