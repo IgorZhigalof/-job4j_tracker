@@ -17,7 +17,7 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (!(user.getUsername().length() > 3)) {
+        if (user.getUsername().length() <= 3) {
             throw new UserInvalidException("User has too short username");
         } else if (!user.isValid()) {
             throw new UserInvalidException("Invalid user");
