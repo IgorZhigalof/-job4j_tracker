@@ -55,7 +55,7 @@ public class AnalyzeByMap {
                 if (!totalScore.containsKey(subject.name())) {
                     totalScore.put(subject.name(), subject.score());
                 } else {
-                    totalScore.put(subject.name(), totalScore.get(subject.name()) + subject.score());
+                    totalScore.put(subject.name(), totalScore.getOrDefault(subject.name(), 0) + subject.score());
                 }
             }
         }
