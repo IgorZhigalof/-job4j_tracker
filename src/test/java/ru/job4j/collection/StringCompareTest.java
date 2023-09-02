@@ -25,7 +25,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftGreaterThanRightResultShouldBePositive() {
+    public void whenFirstCharOfLeftGreaterThanRightResultShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Petrov",
@@ -52,5 +52,15 @@ public class StringCompareTest {
                 "Petrov"
         );
         assertThat(rst).isLessThan(0);
+    }
+
+    @Test
+    public void whenLeftGreaterThanRightResultShouldBePositive() {
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "Ivanova",
+                "Ivanov"
+        );
+        assertThat(rst).isGreaterThan(0);
     }
 }
