@@ -26,6 +26,7 @@ public class Account {
     }
 
     /**
+     * Позволяет узнать номер счёта
      * @return Возвращает номер счёта
      */
     public String getRequisite() {
@@ -41,6 +42,7 @@ public class Account {
     }
 
     /**
+     * Позволяет узнать баланс на счёте
      * @return Возвращает баланс на счёте
      */
     public double getBalance() {
@@ -73,6 +75,7 @@ public class Account {
     }
 
     /**
+     *
      * @return Возвращает hashcode поля requisite
      */
     @Override
