@@ -41,7 +41,7 @@ public class AnalyzeByMap {
             result.add(
                     new Label(
                             key,
-                            ((double) (totalScore.get(key) / pupils.size()))
+                            (double) totalScore.get(key) / pupils.size()
                     )
             );
         }
@@ -52,7 +52,7 @@ public class AnalyzeByMap {
         HashMap<String, Integer> totalScore = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                totalScore.put(subject.name(), totalScore.getOrDefault(subject.name(), -1) + subject.score());
+                totalScore.put(subject.name(), totalScore.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         return totalScore;
