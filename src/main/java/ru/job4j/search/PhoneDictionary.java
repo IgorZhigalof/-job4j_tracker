@@ -28,15 +28,12 @@ public class PhoneDictionary {
         return result;
     }
 
-    private static boolean isCorrect(Person person, String key) {
-        return person.getPhone().contains(key)
-                || person.getName().contains(key)
-                || person.getAddress().contains(key)
-                || person.getSurname().contains(key);
-    }
-
     public ArrayList<Person> finds(String key) {
-        Predicate<Person> combine = (Person person) -> isCorrect(person, key);
+        Predicate<Person> testPhone = x -> x.getPhone().contains(key);
+        Predicate<Person> testName = x -> x.getName().contains(key);
+        Predicate<Person> testAddress = x -> x.getAddress().contains(key);
+        Predicate<Person> testSurname = x -> x.getSurname().contains(key);
+        Predicate<Person> combine = testAddress.or(testName.or(testPhone.or(testSurname)));
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             if (combine.test(person)) {
