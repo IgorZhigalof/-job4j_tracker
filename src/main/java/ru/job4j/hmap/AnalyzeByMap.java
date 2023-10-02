@@ -52,7 +52,7 @@ public class AnalyzeByMap {
         HashMap<String, Integer> totalScore = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                totalScore.put(subject.name(), totalScore.getOrDefault(subject.name(), 0) + subject.score());
+                totalScore.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
         return totalScore;
