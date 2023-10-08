@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 enum Suit {
-    Diamonds, Hearts, Spades, Clubs
+    Diamonds, Hearts, Spades, Clubs;
 }
 
 enum Value {
@@ -21,9 +21,9 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        List<Card> cards = Stream.of(Suit.values())
+        Stream.of(Suit.values())
                 .flatMap(x -> Stream.of(Value.values())
-                        .map(y -> new Card(x, y)))
-                .toList();
+                    .map(y -> new Card(x, y)))
+                .forEach(System.out::println);
     }
 }
