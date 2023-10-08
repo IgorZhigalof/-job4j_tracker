@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 enum Suit {
-    Diamonds, Hearts, Spades, Clubs;
+    Diamonds, Hearts, Spades, Clubs
 }
 
 enum Value {
