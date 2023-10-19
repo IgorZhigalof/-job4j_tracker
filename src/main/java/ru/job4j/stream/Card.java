@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 enum Suit {
     Diamonds, Hearts, Spades, Clubs
+
 }
 
 enum Value {
@@ -24,6 +25,6 @@ public class Card {
         Stream.of(Suit.values())
                 .flatMap(x -> Stream.of(Value.values())
                     .map(y -> new Card(x, y)))
-                .forEach(System.out::println);
+                .forEach(x -> System.out.println(x.suit + " " + x.value));
     }
 }
