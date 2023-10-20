@@ -1,6 +1,5 @@
 package ru.job4j.stream;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 enum Suit {
@@ -16,6 +15,14 @@ public class Card {
     private Suit suit;
     private Value value;
 
+    @Override
+    public String toString() {
+        return "Card{"
+                + "suit=" + suit
+                + ", value=" + value
+                + '}';
+    }
+
     public Card(Suit suit, Value value) {
         this.suit = suit;
         this.value = value;
@@ -25,6 +32,6 @@ public class Card {
         Stream.of(Suit.values())
                 .flatMap(x -> Stream.of(Value.values())
                     .map(y -> new Card(x, y)))
-                .forEach(x -> System.out.println(x.suit + " " + x.value));
+                .forEach(System.out::println);
     }
 }
