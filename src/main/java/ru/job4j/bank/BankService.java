@@ -53,12 +53,11 @@ public class BankService {
      * @return Возвращяет пользователя или null если такового нет
      */
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (passport.equals(user.getPassport())) {
-                return user;
-            }
-        }
-        return null;
+        return users.keySet()
+                .stream()
+                .filter(x -> passport.equals(x.getPassport()))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -69,15 +68,15 @@ public class BankService {
      */
     public Account findByRequisite(String passport, String requisite) {
         User currentUser = findByPassport(passport);
-        if (currentUser != null) {
-            List<Account> accounts = users.get(currentUser);
-            for (Account account : accounts) {
-                if (requisite.equals(account.getRequisite())) {
-                    return account;
-                }
-            }
+        if (currentUser == null) {
+            return null;
         }
-        return null;
+        List<Account> accounts = users.get(currentUser);
+        return accounts
+                .stream()
+                .filter(x -> requisite.equals(x.getRequisite()))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
