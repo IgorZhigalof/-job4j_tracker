@@ -9,6 +9,10 @@ public class Car {
 
     private LocalDate created;
 
+    private double volume;
+
+    private String color;
+
     @Override
     public String toString() {
         return "Car{"
@@ -19,10 +23,6 @@ public class Car {
                 + ", color='" + color + '\''
                 + '}';
     }
-
-    private double volume;
-
-    private String color;
 
     static class Builder {
         private String brand;
