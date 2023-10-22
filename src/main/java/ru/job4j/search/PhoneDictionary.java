@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.function.Predicate;
 
 public class PhoneDictionary {
+
     private ArrayList<Person> persons = new ArrayList<>();
 
     public void add(Person person) {
